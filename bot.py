@@ -107,7 +107,6 @@ def handle_ask(ack, respond, command, client):
 def handle_mention(event, client, say):
     thread_ts  = event.get("thread_ts") or event["ts"]
     user_input = event["text"].split(">", 1)[-1].strip()
-    channel_id = event["channel"]
 
     if not user_input:
         say(text="질문을 입력해주세요!", thread_ts=thread_ts)
